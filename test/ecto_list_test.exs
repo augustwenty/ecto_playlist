@@ -64,4 +64,5 @@ defmodule EctoPlaylistTest do
   test "missing_ids_list/2 with nil" do
     assert EctoPlaylist.missing_ids_list(@all_items, nil) == [1, 2, 3, 4, 5]
   end
+
 end

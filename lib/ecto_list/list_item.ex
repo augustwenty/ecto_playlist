@@ -27,7 +27,16 @@ defmodule EctoPlaylist.ListItem do
 
   def insert_at(order_list, list_item, index) do
     order_list
-    |> Enum.reject(&(&1 == list_item))
+    |> List.insert_at(index - 1, list_item)
+  end
+
+  def insert_at_reject(order_list, _list_item, nil) do
+    order_list
+  end
+
+  def insert_at_reject(order_list, list_item, index) do
+    order_list
+    |> Enum.reject(fn item -> item.id == list_item.id end)
     |> List.insert_at(index - 1, list_item)
   end
 
@@ -48,8 +57,8 @@ defmodule EctoPlaylist.ListItem do
 
   """
   def move_lower(order_list, list_item) do
-    index = Enum.find_index(order_list, &(&1 == list_item))
-    insert_at(order_list, list_item, index && index + 2)
+    index = Enum.find_index(order_list, fn item -> item.id == list_item.id end)
+    insert_at_reject(order_list, list_item, index && index + 2)
   end
 
   @doc """
@@ -66,7 +75,7 @@ defmodule EctoPlaylist.ListItem do
 
   """
   def move_higher(order_list, list_item) do
-    index = Enum.find_index(order_list, &(&1 == list_item))
+    index = Enum.find_index(order_list, fn item -> item.id == list_item.id end)
 
     case index do
       nil ->
@@ -76,7 +85,7 @@ defmodule EctoPlaylist.ListItem do
         order_list
 
       _ ->
-        insert_at(order_list, list_item, index)
+        insert_at_reject(order_list, list_item, index)
     end
   end
 
@@ -100,8 +109,8 @@ defmodule EctoPlaylist.ListItem do
     length = length(order_list)
 
     case Enum.member?(order_list, list_item) do
-      true -> insert_at(order_list, list_item, length)
-      false -> insert_at(order_list, list_item, length + 1)
+      true -> insert_at_reject(order_list, list_item, length)
+      false -> insert_at_reject(order_list, list_item, length + 1)
     end
   end
 
@@ -119,7 +128,7 @@ defmodule EctoPlaylist.ListItem do
 
   """
   def move_to_top(order_list, list_item) do
-    insert_at(order_list, list_item, 1)
+    insert_at_reject(order_list, list_item, 1)
   end
 
   @doc """
@@ -136,7 +145,7 @@ defmodule EctoPlaylist.ListItem do
 
   """
   def remove_from_list(order_list, list_item) do
-    Enum.reject(order_list, &(&1 == list_item))
+    Enum.reject(order_list, fn item -> item.id == list_item.id end)
   end
 
   @doc """
@@ -213,7 +222,8 @@ defmodule EctoPlaylist.ListItem do
       nil
   """
   def higher_item(order_list, list_item) do
-    index = Enum.find_index(order_list, &(&1 == list_item))
+        index = Enum.find_index(order_list, fn item -> item.id == list_item.id end)
+
 
     case index do
       nil -> nil
@@ -238,7 +248,8 @@ defmodule EctoPlaylist.ListItem do
       nil
   """
   def higher_items(order_list, list_item) do
-    index = Enum.find_index(order_list, &(&1 == list_item))
+        index = Enum.find_index(order_list, fn item -> item.id == list_item.id end)
+
 
     case index do
       nil -> nil
@@ -260,7 +271,8 @@ defmodule EctoPlaylist.ListItem do
       nil
   """
   def lower_item(order_list, list_item) do
-    index = Enum.find_index(order_list, &(&1 == list_item))
+        index = Enum.find_index(order_list, fn item -> item.id == list_item.id end)
+
     last_index = length(order_list) - 1
 
     case index do
@@ -286,7 +298,8 @@ defmodule EctoPlaylist.ListItem do
       nil
   """
   def lower_items(order_list, list_item) do
-    index = Enum.find_index(order_list, &(&1 == list_item))
+        index = Enum.find_index(order_list, fn item -> item.id == list_item.id end)
+
     last_index = length(order_list) - 1
 
     case index do
