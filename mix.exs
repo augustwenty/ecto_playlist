@@ -4,7 +4,7 @@ defmodule EctoPlaylist.MixProject do
   def project do
     [
       app: :ecto_playlist,
-      version: "0.0.1",
+      version: "0.0.2",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
