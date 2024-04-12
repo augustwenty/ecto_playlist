@@ -74,4 +74,16 @@ defmodule EctoPlaylist.ListItem do
   def remove_from_list(list, index) do
     List.pop_at(list, index)
   end
+
+    def lower_item(order_list, list_item) do
+        index = Enum.find_index(order_list, fn item -> item.id == list_item.id end)
+
+    last_index = length(order_list) - 1
+
+    case index do
+      nil -> nil
+      ^last_index -> nil
+      _ -> Enum.fetch!(order_list, index + 1)
+    end
+  end
 end
