@@ -1,5 +1,4 @@
 defmodule EctoListItemTest do
-  alias ElixirSense.Plugins.Ecto
   use ExUnit.Case
   doctest EctoPlaylist
 
