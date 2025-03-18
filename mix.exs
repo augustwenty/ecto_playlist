@@ -8,18 +8,15 @@ defmodule EctoPlaylist.MixProject do
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      # Hex
       description: "Simple ordered model management with Ecto.",
       package: package(),
-      # Docs
       name: "ecto_playlist",
       source_url: "https://github.com/augustwenty/ecto_playlist",
       docs: [
         main: "readme",
         extras: ["README.md": []]
       ],
-      groups_for_extras: [
-      ]
+      groups_for_extras: []
     ]
   end
 
