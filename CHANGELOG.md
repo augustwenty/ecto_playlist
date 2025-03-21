@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.1](https://github.com/augustwenty/ecto_playlist/compare/v1.0.0...v1.0.1) (2025-03-21)
+
+
+### Bug Fixes
+
+* updating hex package versions ([98eed9f](https://github.com/augustwenty/ecto_playlist/commit/98eed9f655845e0a23ba4b99e4510f292acd04ec))
+* updating latest ex_doc hex package version ([9433d4d](https://github.com/augustwenty/ecto_playlist/commit/9433d4d4fc27ebf25d5db6d4ff5a2d41dcb41821))
+* updating_mint_tasks_to_only_run_on_PR ([8e438b0](https://github.com/augustwenty/ecto_playlist/commit/8e438b0449eb5c165f079b2cde390f5bd410e7d6))
+* updating_mint_tasks_to_only_run_on_PR ([6d76d8c](https://github.com/augustwenty/ecto_playlist/commit/6d76d8c4285f9bf08143b9b9be11b67547b4eba4))
+
 ## 1.0.0 (2025-03-18)
 
 
