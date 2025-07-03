@@ -38,7 +38,7 @@ defmodule EctoPlaylist.MixProject do
   defp deps do
     [
       {:ex_doc, "~> 0.38.2", only: [:dev, :doc], runtime: false},
-      {:mix_test_watch, "~> 0.8", only: :dev, runtime: false}
+      {:mix_test_watch, "~> 1.3", only: :dev, runtime: false}
     ]
   end
 end
