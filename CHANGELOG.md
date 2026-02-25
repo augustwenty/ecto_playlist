@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.2](https://github.com/augustwenty/ecto_playlist/compare/v1.0.1...v1.0.2) (2026-02-25)
+
+
+### Bug Fixes
+
+* bumping version ([a1e73a7](https://github.com/augustwenty/ecto_playlist/commit/a1e73a76a7a380f7e144cbcf7363735ba49282fa))
+* removing package-name, no longer needed ([834ca23](https://github.com/augustwenty/ecto_playlist/commit/834ca231669dd47d4300992d512eae0bcad2ed66))
+* unexpected_input ([0d995da](https://github.com/augustwenty/ecto_playlist/commit/0d995da8ce641854dab91f3087cc17319498b66b))
+
 ## [1.0.1](https://github.com/augustwenty/ecto_playlist/compare/v1.0.0...v1.0.1) (2025-03-21)
 
 
